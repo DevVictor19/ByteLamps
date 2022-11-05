@@ -4,8 +4,10 @@
 
 ### Preview:
 
-![Screen Shot 2022-11-05 at 18 14 07](https://user-images.githubusercontent.com/90735982/200141568-76d17980-d926-4ef7-8456-4f1b73d3b36f.png)
+![Screen Shot 2022-11-05 at 20 24 29](https://user-images.githubusercontent.com/90735982/200147021-d804531f-ca1b-4d5c-ab4b-a079f54143b5.png)
+
 
 ### Links Importantes:
 
 - Aplicação no ar: https://bytelamps.netlify.app/
+- Inspiração design das lâmpadas: https://www.youtube.com/watch?v=OAgH_VMz08A
