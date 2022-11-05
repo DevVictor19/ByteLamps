@@ -1,32 +1,50 @@
 "use strict";
 
-const form = document.getElementById("decimal-form");
-const input = document.getElementById("decimal-input");
-const lights = document.querySelectorAll(".light");
-const bits = document.querySelectorAll(".bit");
+const lamps = document.querySelectorAll(".lamp");
+const form = document.getElementById("actions-form");
+const inputText = document.getElementById("actions-input");
+const switchSound = new Audio("click.mp3");
 
-form.addEventListener("submit", handleInput);
-input.addEventListener("input", handleInput);
+// events
+inputText.addEventListener("input", handleInput);
+form.addEventListener("submit", handleSubmit);
+
+// events handlers
+function handleInput(event) {
+  const currentValue = event.target.value;
+  let parsedValue = +makeStringWithOnlyNumbers(currentValue);
+
+  if (parsedValue > 255) {
+    parsedValue = 255;
+    inputText.value = parsedValue;
+  } else {
+    inputText.value = parsedValue;
+  }
+
+  controlLamps(parseByte(parsedValue));
+}
 
 function handleSubmit(event) {
   event.preventDefault();
-  controlLights(parseByte(+event.target[0].value));
 }
 
-function handleInput(event) {
-  controlLights(parseByte(+event.target.value));
-}
-
-function controlLights(byteArr) {
+// UI control
+function controlLamps(byteArr) {
   byteArr.forEach((bit, index) => {
-    lights[index].classList.remove("--light-on");
-    bits[index].textContent = "0";
+    lamps[index].classList.remove("--lamp-on");
 
     if (bit === 1) {
-      lights[index].classList.add("--light-on");
-      bits[index].textContent = "1";
+      lamps[index].classList.add("--lamp-on");
     }
+
+    switchSound.load();
+    switchSound.play();
   });
+}
+
+// utilities functions
+function makeStringWithOnlyNumbers(str) {
+  return str.replace(/\D/g, "");
 }
 
 function parseByte(decimal) {
