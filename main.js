@@ -4,7 +4,7 @@ const lamps = document.querySelectorAll(".lamp");
 const form = document.getElementById("actions-form");
 const inputText = document.getElementById("actions-input");
 const display = document.getElementById("actions-display");
-const switchSound = new Audio("click.mp3");
+const switchSound = new Audio("assets/click.mp3");
 
 // events
 inputText.addEventListener("input", handleInput);
