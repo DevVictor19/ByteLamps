@@ -108,12 +108,11 @@ body {
 }
 
 .actions {
-  height: 30vh;
+  padding: 72px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 48px;
 }
 
 #actions-input {
