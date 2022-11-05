@@ -2,6 +2,8 @@
   --black: #000;
   --dark-gray: #222;
   --gray: #444;
+  --white: #fff;
+  --light: #fff;
 }
 
 * {
@@ -32,6 +34,24 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.--lamp-on .lamp-bulb {
+  background-color: var(--white);
+  box-shadow: 0 0 50px var(--light), 0 0 150px var(--light),
+    0 0 250px var(--light), 0 0 350px var(--light);
+}
+
+.--lamp-on .lamp-bulb::before {
+  background-color: var(--white);
+}
+
+.--lamp-on .lamp-bulb span:nth-child(1) {
+  box-shadow: 20px 20px 0 10px var(--white);
+}
+
+.--lamp-on .lamp-bulb span:nth-child(2) {
+  box-shadow: -20px 20px 0 10px var(--white);
 }
 
 .lamp-wire {
