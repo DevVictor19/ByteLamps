@@ -9,3 +9,4 @@
 ### Links Importantes:
 
 - Aplicação no ar: https://bytelamps.netlify.app/
+- Inspiração design das lâmpadas: https://www.youtube.com/watch?v=OAgH_VMz08A
