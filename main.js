@@ -3,6 +3,7 @@
 const lamps = document.querySelectorAll(".lamp");
 const form = document.getElementById("actions-form");
 const inputText = document.getElementById("actions-input");
+const display = document.getElementById("actions-display");
 const switchSound = new Audio("click.mp3");
 
 // events
@@ -21,7 +22,10 @@ function handleInput(event) {
     inputText.value = parsedValue;
   }
 
-  controlLamps(parseByte(parsedValue));
+  const byteArr = parseByte(parsedValue);
+
+  controlDisplay(byteArr);
+  controlLamps(byteArr);
 }
 
 function handleSubmit(event) {
@@ -40,6 +44,17 @@ function controlLamps(byteArr) {
 
   switchSound.load();
   switchSound.play();
+}
+
+function controlDisplay(byteArr) {
+  const displayContent = byteArr.join("");
+
+  if (+displayContent != 0) {
+    display.style.display = "block";
+    display.textContent = `Byte: ${displayContent}`;
+  } else {
+    display.style.display = "none";
+  }
 }
 
 // utilities functions
