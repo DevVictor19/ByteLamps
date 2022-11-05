@@ -3,6 +3,7 @@
 const lamps = document.querySelectorAll(".lamp");
 const form = document.getElementById("actions-form");
 const inputText = document.getElementById("actions-input");
+const switchSound = new Audio("click.mp3");
 
 // events
 inputText.addEventListener("input", handleInput);
@@ -35,6 +36,9 @@ function controlLamps(byteArr) {
     if (bit === 1) {
       lamps[index].classList.add("--lamp-on");
     }
+
+    switchSound.load();
+    switchSound.play();
   });
 }
 
