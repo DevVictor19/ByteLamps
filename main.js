@@ -36,10 +36,10 @@ function controlLamps(byteArr) {
     if (bit === 1) {
       lamps[index].classList.add("--lamp-on");
     }
-
-    switchSound.load();
-    switchSound.play();
   });
+
+  switchSound.load();
+  switchSound.play();
 }
 
 // utilities functions
