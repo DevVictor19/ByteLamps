@@ -26,6 +26,9 @@ function handleInput(event) {
 
   controlDisplay(byteArr);
   controlLamps(byteArr);
+
+  switchSound.load();
+  switchSound.play();
 }
 
 function handleSubmit(event) {
@@ -41,9 +44,6 @@ function controlLamps(byteArr) {
       lamps[index].classList.add("--lamp-on");
     }
   });
-
-  switchSound.load();
-  switchSound.play();
 }
 
 function controlDisplay(byteArr) {
