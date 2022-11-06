@@ -135,3 +135,96 @@ body {
   margin-top: 16px;
   letter-spacing: 4px;
 }
+
+@media screen and (max-width: 920px) {
+  .lamp-bulb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .lamp-bulb::before {
+    top: -45px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 26px;
+    border-radius: 8px;
+    height: 60px;
+  }
+
+  .lamp-bulb span:nth-child(1) {
+    display: none;
+  }
+
+  .lamp-bulb span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .lamp-bulb {
+    width: 50px;
+    height: 50px;
+  }
+
+  .lamp-bulb::before {
+    top: -35px;
+    width: 24px;
+    height: 40px;
+    border-top: 25px solid var(--black);
+  }
+
+  #actions-form {
+    padding: 0 24px;
+  }
+
+  #actions-input {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .lamp-bulb {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lamp-bulb::before {
+    top: -30px;
+    width: 20px;
+    height: 30px;
+    border-top: 20px solid var(--black);
+    border-radius: 6px;
+  }
+
+  .lamp-wire {
+    width: 3px;
+  }
+
+  #actions-input {
+    font-size: 1.5rem;
+  }
+
+  #actions-display {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .lamp-bulb {
+    width: 30px;
+    height: 30px;
+  }
+
+  .lamp-bulb::before {
+    top: -20px;
+    width: 15px;
+    border-top: 15px solid var(--black);
+    border-radius: 5px;
+  }
+
+  .lamp-wire {
+    width: 3px;
+  }
+}
