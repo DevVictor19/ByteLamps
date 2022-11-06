@@ -25,10 +25,7 @@ function handleInput(event) {
   const byteArr = parseByte(parsedValue);
 
   controlDisplay(byteArr);
-  controlLamps(byteArr);
-
-  switchSound.load();
-  switchSound.play();
+  controlLampsLightAndSound(byteArr);
 }
 
 function handleSubmit(event) {
@@ -36,12 +33,14 @@ function handleSubmit(event) {
 }
 
 // UI control
-function controlLamps(byteArr) {
+function controlLampsLightAndSound(byteArr) {
   byteArr.forEach((bit, index) => {
     lamps[index].classList.remove("--lamp-on");
 
     if (bit === 1) {
       lamps[index].classList.add("--lamp-on");
+      switchSound.load();
+      switchSound.play();
     }
   });
 }
